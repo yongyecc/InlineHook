@@ -38,12 +38,6 @@ bool InlineHook(void *pHookAddr, void (*onCallBack)(struct pt_regs *))
         return bRet;
     }
 	
-	if(RestroeThumbHookTarget(pstInlineHook) == false)
-	{
-		LOGI("RestroeThumbHookTarget fail.");
-		return bRet;
-	}
-	LOGI("RestroeThumbHookTarget completed.");
     gs_vecInlineHookInfo.push_back(pstInlineHook);
 	LOGI("HookArm completed.");
     return true;
